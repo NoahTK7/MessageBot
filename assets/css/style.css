@@ -30,14 +30,14 @@ div {
     margin-bottom: 0px !important;
 }
 
-p {
-    display: inline-block;
-}
-
 #footer {
     font-size: 12px;
 }
 
 hr {
     margin-top: 35px;
+}
+
+#changelog {
+    display: inline-block !important;
 }
