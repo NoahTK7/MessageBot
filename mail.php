@@ -11,14 +11,61 @@ $mail = new SendGrid\Email();
 $mail->setFrom('messagebot123@gmail.com');
 
 $url = null;
+$carrierDomain = null;
 $mail->setText('error');
 
 if($_POST['type']==='text'){
     
-    if($_POST['carrier']==='verizon'){
-        $url = $_POST['phoneNumber'].'@vtext.com';
-    } elseif($_POST['carrier']==='sprint'){
-        $url = $_POST['phoneNumber'].'@messaging.sprintpcs.com';
+    switch ($_POST['carrier']) {
+        case 'verizon':
+            $carrierDomain = 'vtext.com';
+            break;
+        case 'sprint':
+            $carrierDomain = 'messaging.sprintpcs.com ';
+            break;
+        case 'at&t':
+            $carrierDomain = 'txt.att.net';
+            break;
+        case 'tmobile':
+            $carrierDomain = 'tmomail.net';
+            break;
+        case 'virginmobile':
+            $carrierDomain = 'vmobl.com';
+            break;
+        case 'tracfone':
+            $carrierDomain = 'mmst5.tracfone.com';
+            break;
+        case 'metropcs':
+            $carrierDomain = 'mymetropcs.com';
+            break;
+        case 'boostmobile':
+            $carrierDomain = 'myboostmobile.com';
+            break;
+        case 'cricket':
+            $carrierDomain = 'sms.mycricket.com';
+            break;
+        case 'nextel':
+            $carrierDomain = 'messaging.nextel.com';
+            break;
+        case 'alltel':
+            $carrierDomain = 'message.alltel.com';
+            break;
+        case 'ptel':
+            $carrierDomain = 'ptel.com';
+            break;
+        case 'suncom':
+            $carrierDomain = 'tms.suncom.com';
+            break;
+        case 'qwest':
+            $carrierDomain = 'qwestmp.com';
+            break;
+        case 'uscellular':
+            $carrierDomain = 'email.uscc.net';
+            break;
+    }
+    
+    if (isset($carrierDomain)) {
+        $url = $_POST['phoneNumber'].'@'.$carrierDomain;
     }
     
     $mail->setSubject('MessageBot');
@@ -32,16 +79,19 @@ if($_POST['type']==='text'){
     
 }
 
-$mail->addTo($url);
+if (isset($url)) {
+    $mail->addTo($url);
+}
 
-$amount = 1;
+$amount = 0;
 
-if ($_POST['amount']>3) {
-    $amount=3;
+if ($_POST['amount']>10) {
+    $amount=10;
 } else {
     $amount = $_POST['amount'];
 }
 
+echo '<title>Message Sent</title>';
 echo '<a href="/MessageBot">Go Back</a><br/><p id="messageStatus">Message Status: Success!</p><hr/><br/>';
 echo "DEBUG:<br/>";
 

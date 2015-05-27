@@ -1,0 +1,34 @@
+Contact noah@noahstech.net for all questions, comments, and concerns.
+
+== Change Log ==
+
+Changed limit of messages per submission from 3 to 10.
+
+--
+
+Added support for sending text messages to numbers with 12 new carriers.
+
+Supported Carriers:
+ - AT&T
+ - T-Mobile
+ - Verizon
+ - Sprint
+ - Virgin Mobile
+ - Tracfone
+ - Metro PCS
+ - Boost Mobile
+ - Cricket
+ - Nextel
+ - Alltel
+ - Ptel
+ - Suncom
+ - Qwest
+ - U.S. Cellular
+
+--
+
+Changed smtp relay from gmail.com to sendgrid.com. Much faster and better for this situation. Much easier to use their api than connect to gmail servers using PHPMailer. Improved send time from ~2 seconds per message to less than 1 sec for multiple.
+
+--
+
+Change log created

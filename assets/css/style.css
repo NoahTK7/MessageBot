@@ -18,15 +18,9 @@ input {
     margin-top: 25px;
 }
 
-
-
 div {
     margin-bottom: 30px;
 }
-
-
-
-
 
 #messageSettings {
     margin-bottom: 25px;
@@ -36,4 +30,16 @@ div {
 
 #settingsContainer {
     margin-bottom: 0px !important;
+}
+
+p {
+    display: inline-block;
+}
+
+#footer {
+    font-size: 12px;
+}
+
+hr {
+    margin-top: 35px;
 }
