@@ -67,6 +67,9 @@ if($_POST['type']==='text'){
     if (isset($carrierDomain)) {
         $url = $_POST['phoneNumber'].'@'.$carrierDomain;
     }
+    elseif($_POST['carrier']==='T-Mobil'){
+        $url = $_POST['phoneNumber'].'number@tmomail.net'
+    }    
     
     $mail->setSubject('MessageBot');
     $mail->setText($_POST['tBody']);
