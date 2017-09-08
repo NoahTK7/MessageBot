@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $("#fieldset").hide();
+    $("#submit").prop("disabled", true);
     
     var type, address, number, subject, carrier, eBody, tBody, amount;
     
@@ -65,3 +66,8 @@ $(document).ready(function(){
     });
     
 });
+
+function enableButton(){
+    $("#submit").prop("disabled", false);
+    console.log("enable button");
+}

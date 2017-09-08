@@ -2,6 +2,10 @@ Contact noah@noahstech.net for all questions, comments, and concerns.
 
 == Change Log ==
 
+Added reCAPTCHA to prevent abuse
+
+--
+
 Changed limit of messages per submission from 3 to 10.
 
 --
