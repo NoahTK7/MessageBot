@@ -92,7 +92,7 @@ if ($_POST['amount']>10) {
 }
 
 echo '<title>Message Sent</title>';
-echo '<a href="/messagebot">Go Back</a><br/><p id="messageStatus">Message Status: Success!</p><hr/><br/>';
+echo '<a href="/MessageBot">Go Back</a><br/><p id="messageStatus">Message Status: Success!</p><hr/><br/>';
 echo "DEBUG:<br/>";
 
 for ($i=1; $i<=$amount; $i++) {
